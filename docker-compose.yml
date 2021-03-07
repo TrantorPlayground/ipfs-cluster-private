@@ -7,8 +7,13 @@ services:
      ports:
        - 4001:4001
        - 5001:5001
+       - 8080:8080
+     expose:
+       - 4001
+       - 5001
+       - 8080
      volumes:
-       - ./ipfsA:/data/ipfs/ 
+       - ./ipfsA:/data/ipfs/
    clusterA:
      image: ipfs/ipfs-cluster:latest
      container_name: "ipfs-cluster-A"
@@ -16,10 +21,11 @@ services:
        CLUSTER_IPFSHTTP_NODEMULTIADDRESS: /dns4/ipfsA/tcp/5001
        CLUSTER_RESTAPI_HTTPLISTENMULTIADDRESS: /ip4/0.0.0.0/tcp/9094 # Expose API
        IPFS_BOOTSTRAP_RM_ALL: "true"
+       DOCKER_DEBUG: "true"
      ports:
        - 7094:9094
      depends_on:
-       - ipfsA 
+       - ipfsA
      volumes:
        - ./clusterA:/data/ipfs-cluster
 
@@ -30,7 +36,7 @@ services:
        - 6001:4001
        - 7001:5001
      volumes:
-       - ./ipfsB:/data/ipfs/ 
+       - ./ipfsB:/data/ipfs/
    clusterB:
      image: ipfs/ipfs-cluster:latest
      container_name: "ipfs-cluster-B"
@@ -38,6 +44,7 @@ services:
        CLUSTER_IPFSHTTP_NODEMULTIADDRESS: /dns4/ipfsB/tcp/5001
        CLUSTER_RESTAPI_HTTPLISTENMULTIADDRESS: /ip4/0.0.0.0/tcp/9094 # Expose API
        IPFS_BOOTSTRAP_RM_ALL: "true"
+       DOCKER_DEBUG: "true"
      ports:
        - 8094:9094
      depends_on:
@@ -51,7 +58,7 @@ services:
        - 8001:4001
        - 9001:5001
      volumes:
-       - ./ipfsC:/data/ipfs/ 
+       - ./ipfsC:/data/ipfs/
    clusterC:
      image: ipfs/ipfs-cluster:latest
      container_name: "ipfs-cluster-C"
@@ -59,6 +66,7 @@ services:
        CLUSTER_IPFSHTTP_NODEMULTIADDRESS: /dns4/ipfsC/tcp/5001
        CLUSTER_RESTAPI_HTTPLISTENMULTIADDRESS: /ip4/0.0.0.0/tcp/9094 # Expose API
        IPFS_BOOTSTRAP_RM_ALL: "true"
+       DOCKER_DEBUG: "true"
      ports:
        - 9094:9094
      depends_on:
