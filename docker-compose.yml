@@ -119,44 +119,8 @@ services:
 
 volumes:
   data-ipfs0:
-    driver_opts:
-      # Filesystem configuration
-      lifecycle_policy: AFTER_14_DAYS
-      performance_mode: maxIO
-      throughput_mode: provisioned
-      provisioned_throughput: 1
   data-ipfs1:
-    driver_opts:
-      # Filesystem configuration
-      lifecycle_policy: AFTER_14_DAYS
-      performance_mode: maxIO
-      throughput_mode: provisioned
-      provisioned_throughput: 1
   data-ipfs2:
-    driver_opts:
-      # Filesystem configuration
-      lifecycle_policy: AFTER_14_DAYS
-      performance_mode: maxIO
-      throughput_mode: provisioned
-      provisioned_throughput: 1
   data-cluster0:
-    driver_opts:
-      # Filesystem configuration
-      lifecycle_policy: AFTER_14_DAYS
-      performance_mode: maxIO
-      throughput_mode: provisioned
-      provisioned_throughput: 1
   data-cluster1:
-    driver_opts:
-      # Filesystem configuration
-      lifecycle_policy: AFTER_14_DAYS
-      performance_mode: maxIO
-      throughput_mode: provisioned
-      provisioned_throughput: 1
   data-cluster2:
-    driver_opts:
-      # Filesystem configuration
-      lifecycle_policy: AFTER_14_DAYS
-      performance_mode: maxIO
-      throughput_mode: provisioned
-      provisioned_throughput: 1
