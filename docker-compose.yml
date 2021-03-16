@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3'
 
 # This is an example docker-compose file to quickly test an IPFS Cluster
 # with multiple peers on a contained environment.
